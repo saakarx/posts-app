@@ -1,5 +1,7 @@
 # Posts App
 
+[Live Link](https://posts-app-pi.vercel.app/)
+
 ![screenshot](./screenshot.png)
 
 ## Technology used
