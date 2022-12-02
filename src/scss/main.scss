@@ -1,0 +1,172 @@
+$primary: #22333b;
+$success: #09bc8a;
+$danger: #dd2d4a;
+$lightBlack: #1c1c1c;
+
+$google: #4285f4;
+$github: #171515;
+$facebook: #4267b2;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+body {
+  color: $lightBlack;
+  font-family: 'Lexend Deca', sans-serif;
+  user-select: none;
+}
+
+.link {
+  border: 1px solid currentColor;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #5e503f;
+}
+.link:hover {
+  color: #c6ac8f;
+}
+
+textarea.post-body {
+  resize: none;
+  min-height: 170px;
+}
+.logout-btn {
+  color: $danger;
+  border: 1px solid rgb(221 45 74 / 40%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+}
+.logout-btn:hover {
+  color: $danger;
+  border-color: rgb(221 45 74 / 65%);
+  box-shadow: 0 7px 30px 0 rgb(221 45 74 / 31%),
+    inset 0 0 15px 0 rgb(221 45 74 / 20%);
+}
+
+.btn {
+  border-radius: 0.5rem;
+}
+
+.buttons-container {
+  max-width: 300px;
+  margin-inline: auto;
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-google {
+    color: white;
+    background-color: $google;
+    border: 1px solid $google;
+
+    &:hover {
+      color: $google;
+      background-color: transparent;
+    }
+    &:focus {
+      box-shadow: 0 0 0 3px #4285f475;
+    }
+  }
+  .btn-github {
+    color: white;
+    background-color: $github;
+    border: 1px solid $github;
+
+    &:hover {
+      color: $github;
+      background-color: transparent;
+    }
+    &:focus {
+      box-shadow: 0 0 0 3px #17151575;
+    }
+  }
+  .btn-facebook {
+    color: white;
+    background-color: $facebook;
+    border: 1px solid $facebook;
+
+    &:hover {
+      color: $facebook;
+      background-color: transparent;
+    }
+    &:focus {
+      box-shadow: 0 0 0 3px #4267b275;
+    }
+  }
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  margin-right: 4px;
+}
+
+.navbar {
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  place-items: center;
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar {
+    display: flex;
+
+    h1 {
+      margin-block: 1rem;
+    }
+  }
+}
+
+.btn-create__post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 1rem;
+
+  border: 1px solid $success;
+  border-radius: 0.5rem;
+  color: $success;
+  background-color: rgb(255 255 255);
+}
+
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: rgb(0 0 0 / 35%);
+  backdrop-filter: blur(4px);
+
+  .modal-container {
+    max-width: 500px;
+    margin: 4rem auto;
+
+    .modal-content {
+      background-color: white;
+      border-radius: 16px;
+      padding: 16px;
+
+      #post-body {
+        height: 150px;
+        resize: none;
+      }
+      .form-error {
+        font-size: 14px;
+        color: $danger;
+        margin-top: 0.375rem;
+      }
+    }
+  }
+}
